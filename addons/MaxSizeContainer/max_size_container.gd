@@ -11,11 +11,6 @@ export var max_size := Vector2(-1, -1) setget set_max_size
 export(VERTICAL_ALIGN) var valign = VERTICAL_ALIGN.CENTER setget set_valign
 export(HORIZONTAL_ALIGN) var halign = HORIZONTAL_ALIGN.CENTER setget set_halign
 
-export(float) var top_margin = 0
-export(float) var left_margin = 0
-export(float) var right_margin = 0
-export(float) var bottom_margin = 0
-
 # child node of the container
 var child : Node
 
@@ -187,13 +182,13 @@ func _set_custom_margins(side : int, value : int) -> void:
 # This function makes custom constants modifications easier
 	match side:
 		LEFT:
-			set("custom_constants/margin_left", value + left_margin)
+			set("custom_constants/margin_left", value)
 		RIGHT:
-			set("custom_constants/margin_right", value + right_margin)
+			set("custom_constants/margin_right", value)
 		TOP:
-			set("custom_constants/margin_top", value + top_margin)
+			set("custom_constants/margin_top", value)
 		BOTTOM:
-			set("custom_constants/margin_bottom", value + bottom_margin)
+			set("custom_constants/margin_bottom", value)
 
 
 func _get_configuration_warning() -> String:
